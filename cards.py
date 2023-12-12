@@ -2,6 +2,7 @@ import pygame
 from main import CARD_SIZE, LITTLE_CARD_SIZE, COLOURS
 
 class Card():
+	"""Клас для будь-якої картки гри"""
 	def __init__(self, name, description, health, position_type, image, ability = None):
 		self.name = name
 		self.description = description
