@@ -8,4 +8,4 @@ A list of cards for ideas may be found at [this google spreadsheet](https://docs
 ### Now a python version is available.
 
 *After some concept changes, the new design looks like this*
-![Handwritten idea of the game]([http://url/to/img.png](https://i.postimg.cc/kXmzMsYg/image-2023-12-12-225253794.png)https://i.postimg.cc/kXmzMsYg/image-2023-12-12-225253794.png)
+![Handwritten idea of the game](https://i.postimg.cc/kXmzMsYg/image-2023-12-12-225253794.png)
