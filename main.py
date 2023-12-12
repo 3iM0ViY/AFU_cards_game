@@ -3,6 +3,18 @@ import random
 
 CARD_SIZE = (150, 220)
 LITTLE_CARD_SIZE = (90, 140)
+COLOURS = {
+		"blue": (0, 123, 167),
+		"yellow": (255, 195, 18),
+		"green": (34, 153, 84),
+		"red": (207, 0, 15),
+		"wheat": (245, 222, 179),
+		"purple": (136, 78, 160),
+		"brown": (139, 69, 19),
+		"orange": (235, 149, 50),
+		"black": (0, 0, 0),
+		"cream": (255, 245, 239)
+	}
 
 class Card():
 	def __init__(self, i, SCREEN_WIDTH, SCREEN_HEIGHT):
@@ -48,19 +60,6 @@ def main():
 
 	screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.RESIZABLE)
 
-	colours = {
-		"blue": (0, 123, 167),
-		"yellow": (255, 195, 18),
-		"green": (34, 153, 84),
-		"red": (207, 0, 15),
-		"wheat": (245, 222, 179),
-		"purple": (136, 78, 160),
-		"brown": (139, 69, 19),
-		"orange": (235, 149, 50),
-		"black": (0, 0, 0),
-		"cream": (255, 245, 239)
-	}
-
 	pygame.display.set_caption("Поворуши великим пальцем!")
 
 	boxes, images = [], []
@@ -94,7 +93,7 @@ def main():
 
 	running = True
 	while running:
-		screen.fill(colours["cream"])
+		screen.fill(COLOURS["cream"])
 		for event in pygame.event.get():
 
 			if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
@@ -140,20 +139,20 @@ def main():
 
 		# Дроп зони
 		for drop_zone in drop_zones:
-			pygame.draw.rect(screen, colours["wheat"], drop_zone)
+			pygame.draw.rect(screen, COLOURS["wheat"], drop_zone)
 
 		# Рука гравця
 		for hand_zone in hand_zones:
-			pygame.draw.rect(screen, colours["yellow"], hand_zone)
+			pygame.draw.rect(screen, COLOURS["yellow"], hand_zone)
 
 		# Малювання карток
 		for index, image in enumerate(images):
-		    if index != active_box:
-		        screen.blit(image, boxes[index].object_rect)
+			if index != active_box:
+				screen.blit(image, boxes[index].object_rect)
 
 		# Обрана картка завжди поверх
 		if active_box is not None:
-		    screen.blit(images[active_box], boxes[active_box].object_rect)
+			screen.blit(images[active_box], boxes[active_box].object_rect)
 
 		pygame.display.update()
 
